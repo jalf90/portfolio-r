@@ -1,5 +1,9 @@
 {
     "HomePage": {
-        "title": "Hello"
+        "title": "Hello",
+        "welcome": {
+            "title": "Welcome"
+        },
+        "contact": "Contact"
     }
 }

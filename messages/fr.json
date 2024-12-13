@@ -1,5 +1,9 @@
 {
-    "home": {
-        "saveAndSeeInstantly": "Save and see your changes instantly."
+    "HomePage": {
+        "title": "Bonjour",
+         "welcome": {
+            "title": "Bienvenue"
+        },
+        "contact": "Contact"
     }
 }
