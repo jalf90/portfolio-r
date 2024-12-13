@@ -1,5 +1,6 @@
 import { Link } from '@/i18n/routing';
 import styles from './Header.module.scss';
+import LocaleSwitcher from './LocaleSwitcher';
 
 export default function Header() {
   return (
@@ -7,6 +8,7 @@ export default function Header() {
       <div>Logo</div>
       <Link href="/">Home</Link>
       <Link href="/contact">Contact me</Link>
+      <LocaleSwitcher />
       <nav></nav>
       <div className="flex">
         <Link href="/" locale="en">

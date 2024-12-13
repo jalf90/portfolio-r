@@ -7,6 +7,14 @@ export const routing = defineRouting({
 
   // Used when no locale matches
   defaultLocale: 'en',
+
+  pathnames: {
+    '/': '/',
+    '/contact': {
+      en: '/contact-me',
+      fr: '/contactez-moi',
+    },
+  },
 });
 
 export type Locale = (typeof routing.locales)[number];
