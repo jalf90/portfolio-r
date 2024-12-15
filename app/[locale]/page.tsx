@@ -6,7 +6,7 @@ export default async function HomePage() {
   const t = await getTranslations('HomePage');
   return (
     <div className={styles.main}>
-      <Avatar src="/assets/images/profile.png" height={70} width={70} />
+      <Avatar src="/assets/images/profile.png" height={50} width={50} />
       <label>{t('welcome.hello')}</label>
       <h2>{t('welcome.title')}</h2>
       <h2>{t('welcome.subtitle')}</h2>
