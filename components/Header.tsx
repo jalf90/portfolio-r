@@ -1,23 +1,23 @@
 import { Link } from '@/i18n/routing';
 import styles from './Header.module.scss';
 import LocaleSwitcher from './LocaleSwitcher';
+import { FaHome } from 'react-icons/fa';
+import { MdContactMail } from 'react-icons/md';
+import { getTranslations } from 'next-intl/server';
 
-export default function Header() {
+export default async function Header() {
+  const t = await getTranslations('common');
   return (
     <header className={styles.navbar}>
-      <div>Logo</div>
-      <Link href="/">Home</Link>
-      <Link href="/contact">Contact me</Link>
+      <nav>
+        <Link href="/" title={t('home')}>
+          <FaHome size={20} />
+        </Link>
+        <Link href="/contact" title={t('contactme')}>
+          <MdContactMail size={20} />
+        </Link>
+      </nav>
       <LocaleSwitcher />
-      <nav></nav>
-      <div className="flex">
-        <Link href="/" locale="en">
-          English
-        </Link>
-        <Link href="/" locale="fr">
-          Français
-        </Link>
-      </div>
     </header>
   );
 }

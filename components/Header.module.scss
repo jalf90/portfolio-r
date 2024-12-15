@@ -3,4 +3,12 @@
     justify-content: space-between;
     background-color: #006d77;
     color: #fff;
+    padding: 10px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+    position: relative;
+
+    nav {
+        display: flex;
+        gap: 10px;
+    }
 }

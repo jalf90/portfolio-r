@@ -1,9 +1,14 @@
 {
     "HomePage": {
-        "title": "Frontend developer",
         "welcome": {
-            "title": "Welcome"
+            "hello": "Hello, I am João!",
+            "title": "Frontend developer",
+            "subtitle": "Specialised in React"
         },
         "contact": "Contact"
+    },
+    "common": {
+        "home": "Home",
+        "contactme": "Contact me"
     }
 }

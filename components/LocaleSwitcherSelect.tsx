@@ -2,6 +2,7 @@
 
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 import { ChangeEvent, ReactNode } from 'react';
+import { IoLanguage } from 'react-icons/io5';
 
 interface Props {
   defaultValue: string;
@@ -19,7 +20,7 @@ export default function LocalSwitcherSelect({ defaultValue, label, children }: P
 
   return (
     <>
-      {label}
+      <IoLanguage />
       <select defaultValue={defaultValue} onChange={handleSelectChange}>
         {children}
       </select>

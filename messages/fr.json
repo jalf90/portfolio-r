@@ -1,9 +1,14 @@
 {
     "HomePage": {
-        "title": "Développeur Frontend",
          "welcome": {
-            "title": "Bienvenue"
+            "hello": "Salut, Je m'appele João!",
+            "title": "Développeur Frontend",
+            "subtitle": "Spécialisé en React"
         },
         "contact": "Contact"
+    },
+    "common": {
+        "home": "Accueil",
+        "contactme": "Contactez-moi"
     }
 }
