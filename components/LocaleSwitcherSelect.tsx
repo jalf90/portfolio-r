@@ -20,7 +20,7 @@ export default function LocalSwitcherSelect({ defaultValue, label, children }: P
 
   return (
     <>
-      <IoLanguage />
+      {label ? label : <IoLanguage />}
       <select defaultValue={defaultValue} onChange={handleSelectChange}>
         {children}
       </select>
