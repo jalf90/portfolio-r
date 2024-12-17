@@ -7,18 +7,10 @@ import { useTranslations } from 'use-intl';
 import styles from './Autocomplete.module.scss';
 import useOutsideAlerter from '@/hooks/useClickOutsideListener';
 
-interface Geo_Details {
-  country: string;
-  lat: number;
-  lon: number;
-  name: string;
-  state: string;
-}
-
 interface AutocompleteProps {
   url: string;
   value?: string;
-  selectedItem: (item: Geo_Details) => void;
+  selectedItem: (item: any) => void;
 }
 
 export default function Autocomplete(props: AutocompleteProps) {
@@ -38,7 +30,7 @@ export default function Autocomplete(props: AutocompleteProps) {
     enabled: searchText.length > 3,
   });
 
-  const handleSelectedItem = (item: Geo_Details) => {
+  const handleSelectedItem = (item: any) => {
     props.selectedItem(item);
 
     // reset input
@@ -48,7 +40,7 @@ export default function Autocomplete(props: AutocompleteProps) {
 
   return (
     <div ref={containerRef} className="flex flex-column w-2">
-      <label>{t('search')}</label>
+      <small>{t('search')}</small>
       <input
         ref={citySearchRef}
         type="text"
@@ -58,7 +50,7 @@ export default function Autocomplete(props: AutocompleteProps) {
       />
       {data && !isLoading && (
         <ul className={styles.menu} ref={menuElementRef}>
-          {data.map((item: Geo_Details, index: number) => (
+          {data.map((item: any, index: number) => (
             <li key={index} onClick={() => handleSelectedItem(item)}>
               {item.name}, {item.state}, {item.country}
             </li>

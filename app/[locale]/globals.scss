@@ -66,6 +66,10 @@ a {
   gap: 5px;
 }
 
+.grid {
+  display: grid;
+}
+
 input {
   padding: 5px;
 }
@@ -82,6 +86,14 @@ input {
 
 .p-2 {
   padding: 10px
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+.small {
+  font-size: small;
 }
 
 .hidden {
@@ -120,4 +132,12 @@ input {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.danger {
+  color: red;
+}
+
+.info {
+  color: blue;
 }
