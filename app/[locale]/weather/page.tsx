@@ -8,6 +8,7 @@ import { FaCloud, FaCloudSun, FaCloudShowersHeavy } from 'react-icons/fa';
 import { BsCloudSnowFill } from 'react-icons/bs';
 import styles from './page.module.scss';
 import { Daily } from './model';
+import { formatDay } from '@/utils/format';
 
 interface Coordinate {
   lat: number;
@@ -76,15 +77,20 @@ export default function WeatherPage() {
       <h3 className="mt-2">{countrySelected}</h3>
       <div className={styles.content}>
         {data?.daily.map((item: Daily) => (
-          <div key={item.dt} className="flex flex-column p-2">
-            {getWeatherIcon(item.weather[0].icon as IconKey)}
-            <label>{item.weather[0].description}</label>
-            <p>
-              Max: <span className="danger">{item.temp.max}&#176;</span>
-            </p>
-            <p>
-              Min: <span className="info">{item.temp.min}&#176;</span>
-            </p>
+          <div key={item.dt} className="flex p-2">
+            <div className="flex flex-column">
+              <h5>{formatDay(item.dt, 'en-US')}</h5>
+              {getWeatherIcon(item.weather[0].icon as IconKey)}
+              <small>{item.weather[0].description}</small>
+            </div>
+            <div className="flex flex-column">
+              <p>
+                Max: <span className="danger">{item.temp.max.toFixed(0)}&#176;</span>
+              </p>
+              <p>
+                Min: <span className="info">{item.temp.min.toFixed(0)}&#176;</span>
+              </p>
+            </div>
           </div>
         ))}
       </div>

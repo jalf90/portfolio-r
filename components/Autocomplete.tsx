@@ -48,7 +48,7 @@ export default function Autocomplete<T>(props: AutocompleteProps<T>) {
   };
 
   return (
-    <div ref={containerRef} className="flex flex-column w-2">
+    <div ref={containerRef} className="flex flex-column w-2 relative">
       <small>{t('search')}</small>
       <input
         ref={citySearchRef}
@@ -57,13 +57,17 @@ export default function Autocomplete<T>(props: AutocompleteProps<T>) {
         value={inputSearchText}
         onChange={(event) => setInputSearchText(event.target.value)}
       />
-      {data && !isLoading && (
+      {data && (
         <ul className={styles.menu} ref={menuElementRef}>
-          {data.map((item: T, index: number) => (
-            <li key={index} onClick={() => handleSelectedItem(item)}>
-              {getDisplayValue(item as Record<string, any>)}
-            </li>
-          ))}
+          {data.length ? (
+            data.map((item: T, index: number) => (
+              <li key={index} onClick={() => handleSelectedItem(item)}>
+                {getDisplayValue(item as Record<string, any>)}
+              </li>
+            ))
+          ) : (
+            <li className={styles.noAction}>No data found!</li>
+          )}
         </ul>
       )}
     </div>

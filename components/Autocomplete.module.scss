@@ -3,11 +3,17 @@
     list-style-type: none;
     border: 1px solid lightgray;
     border-radius: 5px;
+    position: absolute;
+    top: 43px;
+    left: 0;
+    min-width: 100%;
 
     li {
         padding: 5px;
+        background-color: white;
+        color: black;
 
-        &:hover {
+        &:not(.noAction):hover {
             background-color: beige;
             color: black;
             cursor: pointer;
