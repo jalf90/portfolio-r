@@ -58,8 +58,16 @@ a {
   flex-direction: column;
 }
 
-.items-center {
+.align-items-center {
   align-items: center;
+}
+
+.flex-full {
+  flex: 1 1 auto;
+}
+
+.justifiy-content-center {
+  justify-content: center;
 }
 
 .gap-2 {

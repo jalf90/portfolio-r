@@ -68,8 +68,9 @@ export default function WeatherPage() {
 
   return (
     <div className="p-2">
-      <Autocomplete
+      <Autocomplete<CityDetails>
         url={`${config.weather_api.BASE_URL}/${config.weather_api.GEO}?limit=5&appid=${process.env.NEXT_PUBLIC_WEATHER_API_KEY}&q=`}
+        displayKeys={['name', 'state', 'country']}
         selectedItem={handleSelectedItem}
       />
       <h3 className="mt-2">{countrySelected}</h3>

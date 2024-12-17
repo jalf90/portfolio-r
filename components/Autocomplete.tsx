@@ -7,13 +7,14 @@ import { useTranslations } from 'use-intl';
 import styles from './Autocomplete.module.scss';
 import useOutsideAlerter from '@/hooks/useClickOutsideListener';
 
-interface AutocompleteProps {
+interface AutocompleteProps<T> {
   url: string;
   value?: string;
-  selectedItem: (item: any) => void;
+  displayKeys: string[];
+  selectedItem: (item: T) => void;
 }
 
-export default function Autocomplete(props: AutocompleteProps) {
+export default function Autocomplete<T>(props: AutocompleteProps<T>) {
   const citySearchRef = useRef<HTMLInputElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
   const menuElementRef = useRef<HTMLUListElement | null>(null);
@@ -30,12 +31,17 @@ export default function Autocomplete(props: AutocompleteProps) {
     enabled: searchText.length > 3,
   });
 
-  const handleSelectedItem = (item: any) => {
+  const handleSelectedItem = (item: T) => {
     props.selectedItem(item);
 
     // reset input
     setInputSearchText('');
     menuElementRef.current?.classList.add('hidden');
+  };
+
+  // Dynamically get the property to display
+  const getDisplayValue = (item: Record<string, any>) => {
+    return props.displayKeys.reduce((acc, value) => (acc.length ? `${acc}, ${item[value]}` : item[value]), '');
   };
 
   return (
@@ -50,9 +56,9 @@ export default function Autocomplete(props: AutocompleteProps) {
       />
       {data && !isLoading && (
         <ul className={styles.menu} ref={menuElementRef}>
-          {data.map((item: any, index: number) => (
+          {data.map((item: T, index: number) => (
             <li key={index} onClick={() => handleSelectedItem(item)}>
-              {item.name}, {item.state}, {item.country}
+              {getDisplayValue(item as Record<string, any>)}
             </li>
           ))}
         </ul>
