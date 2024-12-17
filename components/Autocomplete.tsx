@@ -41,7 +41,10 @@ export default function Autocomplete<T>(props: AutocompleteProps<T>) {
 
   // Dynamically get the property to display
   const getDisplayValue = (item: Record<string, any>) => {
-    return props.displayKeys.reduce((acc, value) => (acc.length ? `${acc}, ${item[value]}` : item[value]), '');
+    return props.displayKeys.reduce(
+      (acc, value) => (acc.length ? (item[value] !== undefined ? `${acc}, ${item[value]}` : acc) : item[value]),
+      ''
+    );
   };
 
   return (

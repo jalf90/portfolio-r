@@ -48,7 +48,7 @@ export default function WeatherPage() {
 
   const handleSelectedItem = (item: CityDetails) => {
     setCoordinates({ lat: item.lat, lon: item.lon });
-    setCountrySelected(`${item.name}, ${item.state}`);
+    setCountrySelected(item.state ? `${item.name}, ${item.state}, ${item.country}` : `${item.name}, ${item.country}`);
   };
 
   const { data, isLoading } = useQuery({
