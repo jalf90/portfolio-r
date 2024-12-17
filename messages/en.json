@@ -9,6 +9,8 @@
     },
     "common": {
         "home": "Home",
-        "contactme": "Contact me"
+        "contactme": "Contact me",
+        "weather": "Weather",
+        "search": "Search"
     }
 }

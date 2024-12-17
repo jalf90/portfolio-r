@@ -14,6 +14,10 @@ export const routing = defineRouting({
       en: '/contact-me',
       fr: '/contactez-moi',
     },
+    '/weather': {
+      en: '/weather',
+      fr: '/meteo',
+    },
   },
 });
 

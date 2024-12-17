@@ -9,6 +9,8 @@
     },
     "common": {
         "home": "Accueil",
-        "contactme": "Contactez-moi"
+        "contactme": "Contactez-moi",
+        "weather": "Méteo",
+        "search": "Recherche"
     }
 }

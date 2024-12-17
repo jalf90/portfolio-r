@@ -1,0 +1,20 @@
+.menu {
+    margin-top: 5px;
+    list-style-type: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+
+    li {
+        padding: 5px;
+
+        &:hover {
+            background-color: beige;
+            color: black;
+            cursor: pointer;
+        }
+
+        &:not(:last-child) {
+            border-bottom: 1px solid lightgray;
+        }
+    }
+}
