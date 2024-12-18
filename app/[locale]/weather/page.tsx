@@ -63,10 +63,6 @@ export default function WeatherPage() {
 
   if (isLoading) return <span>Is Loading...</span>;
 
-  const getWeatherIcon = (icon: IconKey) => {
-    return ICON_TYPES[icon];
-  };
-
   return (
     <div className="p-2">
       <Autocomplete<CityDetails>
@@ -77,22 +73,32 @@ export default function WeatherPage() {
       <h3 className="mt-2">{countrySelected}</h3>
       <div className={styles.content}>
         {data?.daily.map((item: Daily) => (
-          <div key={item.dt} className="flex p-2">
-            <div className="flex flex-column">
-              <h5>{formatDay(item.dt, 'en-US')}</h5>
-              {getWeatherIcon(item.weather[0].icon as IconKey)}
-              <small>{item.weather[0].description}</small>
-            </div>
-            <div className="flex flex-column">
-              <p>
-                Max: <span className="danger">{item.temp.max.toFixed(0)}&#176;</span>
-              </p>
-              <p>
-                Min: <span className="info">{item.temp.min.toFixed(0)}&#176;</span>
-              </p>
-            </div>
-          </div>
+          <WeatherCard key={item.dt} item={item} />
         ))}
+      </div>
+    </div>
+  );
+}
+
+function WeatherCard({ item }: { item: Daily }) {
+  const getWeatherIcon = (icon: IconKey) => {
+    return ICON_TYPES[icon];
+  };
+
+  return (
+    <div className="flex p-2">
+      <div className="flex flex-column">
+        <h5>{formatDay(item.dt, 'en-US')}</h5>
+        {getWeatherIcon(item.weather[0].icon as IconKey)}
+        <small>{item.weather[0].description}</small>
+      </div>
+      <div className="flex flex-column">
+        <p>
+          Max: <span className="danger">{item.temp.max.toFixed(0)}&#176;</span>
+        </p>
+        <p>
+          Min: <span className="info">{item.temp.min.toFixed(0)}&#176;</span>
+        </p>
       </div>
     </div>
   );

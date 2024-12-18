@@ -66,6 +66,17 @@ export default function Autocomplete<T>(props: AutocompleteProps<T>) {
     }
   };
 
+  const renderMenuItems = (data: T[]) => {
+    if (data) {
+      return data.map((item, index) => (
+        <li key={index} className={index === activeIndex ? styles.active : ''} onClick={() => handleSelectedItem(item)}>
+          {getDisplayValue(item as Record<string, string>)}
+        </li>
+      ));
+    }
+    return <li className={styles.noAction}>No data found!</li>;
+  };
+
   return (
     <div ref={containerRef} className="flex flex-column w-2 relative">
       <small>{t('search')}</small>
@@ -79,19 +90,7 @@ export default function Autocomplete<T>(props: AutocompleteProps<T>) {
       />
       {data && (
         <ul className={styles.menu} ref={menuElementRef}>
-          {data.length ? (
-            data.map((item: T, index: number) => (
-              <li
-                key={index}
-                className={index === activeIndex ? styles.active : ''}
-                onClick={() => handleSelectedItem(item)}
-              >
-                {getDisplayValue(item as Record<string, string>)}
-              </li>
-            ))
-          ) : (
-            <li className={styles.noAction}>No data found!</li>
-          )}
+          {renderMenuItems(data)}
         </ul>
       )}
     </div>
