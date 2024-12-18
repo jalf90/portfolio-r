@@ -13,7 +13,7 @@
         background-color: white;
         color: black;
 
-        &:not(.noAction):hover {
+        &:not(.noAction):hover, &:not(.noAction).active {
             background-color: beige;
             color: black;
             cursor: pointer;
