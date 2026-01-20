@@ -48,6 +48,52 @@ a {
   }
 }
 
+/* Alignment */
+
+.text-align-center {
+  text-align: center;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.mr-1 {
+  margin-right: 5px;
+}
+
+.mt-1 {
+  margin-top: 5px;
+}
+
+.mt-2 {
+  margin-top: 10px;
+}
+
+/* buttons */
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  &.primary {
+    background-color: variables.$primary;
+    min-width: 150px;
+    width: auto;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: variables.$primaryLight;
+      cursor: not-allowed;
+    }
+  }
+}
+
 /* Layout */
 
 .relative {
@@ -74,16 +120,20 @@ a {
   justify-content: center;
 }
 
-.gap-2 {
+.gap-1 {
   gap: 5px;
+}
+
+.gap-2 {
+  gap: 10px;
 }
 
 .grid {
   display: grid;
 }
 
-input {
-  padding: 5px;
+input, textarea {
+  padding: 10px;
 }
 
 /* Dimensions */
@@ -98,10 +148,6 @@ input {
 
 .p-2 {
   padding: 10px
-}
-
-.mt-2 {
-  margin-top: 10px;
 }
 
 .small {

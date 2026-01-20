@@ -1,0 +1,13 @@
+@use "./../variables";
+
+.container {
+    padding: 20px 30%;
+
+    label {
+        font-size: small;
+    }
+
+    button {
+        color: variables.$white;
+    }
+}

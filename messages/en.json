@@ -11,6 +11,19 @@
         "home": "Home",
         "contactme": "Contact me",
         "weather": "Weather",
-        "search": "Search"
+        "search": "Search",
+        "calendarFormat": "en-US",
+        "sendMessage": "Send message",
+        "name": "Name",
+        "firstname": "First name",
+        "lastname": "Last name",
+        "message": "Message",
+        "optional": "Optional",
+        "email": "Email address",
+        "contact": "Contact"
+    },
+    "notifications": {
+        "emailSentSuccessfully": "Email sent successfully!",
+        "emailSentError": "Error sending email. Please try again later."
     }
 }

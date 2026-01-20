@@ -11,6 +11,14 @@
         "home": "Accueil",
         "contactme": "Contactez-moi",
         "weather": "Méteo",
-        "search": "Recherche"
+        "search": "Recherche",
+        "calendarFormat": "fr-CH",
+        "sendMessage": "Envoyer message",
+        "name": "Nom",
+        "firstname": "Prénom",
+        "lastname": "Nom",
+        "message": "Message",
+        "email": "Adresse email",
+        "contact": "Contact"
     }
 }
