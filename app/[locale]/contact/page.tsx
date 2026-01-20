@@ -160,13 +160,13 @@ export default function ContactPage() {
           rows={10}
         />
         <button type="submit" className="mt-2 primary" disabled={!validForm || isSending}>
-          <MdSend /> {tc('sendMessage')}
-          {isSending && <CircularProgress value={25} color="inherit" className="flex" />}
+          {isSending ? <CircularProgress size="15px" color="inherit" className="flex" /> : <MdSend />}
+          {tc('sendMessage')}
         </button>
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Snackbar
             open={toast.open}
-            autoHideDuration={3000}
+            autoHideDuration={6000}
             onClose={handleToastClose}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
           >
