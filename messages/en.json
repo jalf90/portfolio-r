@@ -20,7 +20,15 @@
         "message": "Message",
         "optional": "Optional",
         "email": "Email address",
-        "contact": "Contact"
+        "contact": "Contact",
+        "forms": {
+            "requiredField": "This field is required",
+            "invalidEmail": "Please enter a valid email address",
+            "typeHereYour": "Type {fieldName} here"
+        }
+    },
+    "navbar": {
+        "selectLocale"
     },
     "notifications": {
         "emailSentSuccessfully": "Email sent successfully!",

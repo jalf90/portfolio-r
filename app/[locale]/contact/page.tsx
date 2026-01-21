@@ -109,7 +109,7 @@ export default function ContactPage() {
         <MdContactMail className="mr-1" /> {tc('contact')}
       </h2>
       <form onSubmit={handleEmailSubmit} className="flex flex-column justify-content-center">
-        <div className="flex flex-full gap-2">
+        <div className={styles.nameFields}>
           <div className="flex flex-column flex-full">
             <label htmlFor="firstname" className="mt-2">
               {tc('firstname')}
@@ -120,7 +120,7 @@ export default function ContactPage() {
               name="firstname"
               value={emailFormData.firstname}
               onChange={onEmailFormDataChange}
-              placeholder="type your firstname"
+              placeholder={tc('forms.typeHereYour', { fieldName: tc('firstname').toLocaleLowerCase() })}
             />
           </div>
           <div className="flex flex-column flex-full">
@@ -133,11 +133,11 @@ export default function ContactPage() {
               name="lastname"
               value={emailFormData.lastname}
               onChange={onEmailFormDataChange}
-              placeholder="type your lastname"
+              placeholder={tc('forms.typeHereYour', { fieldName: tc('lastname').toLocaleLowerCase() })}
             />
           </div>
         </div>
-        <label htmlFor="email" className="mt-1">
+        <label htmlFor="email" className="mt-2">
           {tc('email')}
         </label>
         <input
@@ -146,9 +146,9 @@ export default function ContactPage() {
           name="email"
           value={emailFormData.email}
           onChange={onEmailFormDataChange}
-          placeholder="type here your gmail or hotmail or outlook..."
+          placeholder={tc('forms.typeHereYour', { fieldName: tc('email').toLocaleLowerCase() })}
         />
-        <label htmlFor="message" className="mt-1">
+        <label htmlFor="message" className="mt-2">
           {tc('message')} <small>({tc('optional')})</small>
         </label>
         <textarea
@@ -156,7 +156,7 @@ export default function ContactPage() {
           name="message"
           value={emailFormData.message}
           onChange={onEmailFormDataChange}
-          placeholder="type your message here"
+          placeholder={tc('forms.typeHereYour', { fieldName: tc('message').toLocaleLowerCase() })}
           rows={10}
         />
         <button type="submit" className="mt-2 primary" disabled={!validForm || isSending}>

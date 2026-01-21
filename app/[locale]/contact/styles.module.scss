@@ -3,17 +3,23 @@
 .container {
     padding: 20px 30%;
 
-    label {
-        font-size: small;
-    }
-
     button {
         color: variables.$white;
     }
+}
+    
+.nameFields {
+    display: flex;
+    gap: 10px;
 }
 
 @media (max-width: 768px) {
     .container {
         padding: 20px;
+    }
+    
+    .nameFields {
+        flex-direction: column;
+        gap: 0;
     }
 }
