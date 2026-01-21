@@ -19,6 +19,16 @@
         "lastname": "Nom",
         "message": "Message",
         "email": "Adresse email",
-        "contact": "Contact"
+        "contact": "Contact",
+        "optional": "Optionnel",
+        "forms": {
+            "requiredField": "Ce champ est requis",
+            "invalidEmail": "Veuillez entrer une adresse email valide",
+            "typeHereYour": "Tapez {fieldName} ici"
+        }
+    },
+    "notifications": {
+        "emailSentSuccessfully": "Email envoyé avec succès!",
+        "emailSentError": "Erreur lors de l'envoi de l'email. Veuillez réessayer plus tard."
     }
 }
