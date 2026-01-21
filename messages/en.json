@@ -18,17 +18,14 @@
         "firstname": "First name",
         "lastname": "Last name",
         "message": "Message",
-        "optional": "Optional",
         "email": "Email address",
         "contact": "Contact",
+        "optional": "Optional",
         "forms": {
             "requiredField": "This field is required",
             "invalidEmail": "Please enter a valid email address",
             "typeHereYour": "Type {fieldName} here"
         }
-    },
-    "navbar": {
-        "selectLocale"
     },
     "notifications": {
         "emailSentSuccessfully": "Email sent successfully!",
